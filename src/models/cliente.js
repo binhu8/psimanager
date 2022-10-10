@@ -7,7 +7,10 @@ const cliente = new Schema({
     cpf: String, 
     dataNascimento: String,
     telefone: String,
-    contatoEmergencia: String,
+    contatoEmergencia: {
+        numero: String,
+        nome: String
+    },
     email: String,
     endereco: {
         cep: String,

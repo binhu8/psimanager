@@ -9,6 +9,7 @@ let port = process.env.PORT || 3003
 app.use(express.json());
 app.use((req, res, next)=> {
     res.header("Access-Control-Allow-Origin", "*")
+    app.use(cors())
     next()
 })
 

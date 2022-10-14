@@ -8,6 +8,7 @@ let port = process.env.PORT || 3003
 
 app.use(express.json());
 app.use(cors({
+    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
     origin: '*'
 }));
 

@@ -7,10 +7,10 @@ const {google} = require('googleapis');
 let port = process.env.PORT || 3003
 
 app.use(express.json());
-app.use(cors({
-    methods: ['GET','POST','DELETE','UPDATE','PUT','PATCH'],
-    origin: '*'
-}));
+app.use((req, res, next)=> {
+    res.header("Access-Control-Allow-Origin", "*")
+    next()
+})
 
 app.use('/add', require('./src/routes/event.routes'));
 app.use('/clientes', require('./src/routes/getClientes.routes'));

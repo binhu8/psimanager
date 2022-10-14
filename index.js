@@ -13,6 +13,7 @@ app.use(cors())
 app.use('/add', require('./src/routes/event.routes'));
 app.use('/clientes', require('./src/routes/getClientes.routes'));
 app.use('/add-cliente', require('./src/routes/cliente.routes'));
+app.use('/delete', require('./src/routes/cliente.routes'));
 app.use('/events', require('./src/routes/event.routes'));
 app.use('/update', require('./src/routes/updateEvent.routes'))
 app.use('/login', require('./src/routes/login.routes'));

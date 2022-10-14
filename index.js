@@ -7,7 +7,9 @@ const {google} = require('googleapis');
 let port = process.env.PORT || 3003
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: '*'
+}));
 
 app.use('/add', require('./src/routes/event.routes'));
 app.use('/clientes', require('./src/routes/getClientes.routes'));

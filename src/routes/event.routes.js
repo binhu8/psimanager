@@ -31,13 +31,5 @@ router.get('/get-evento-cliente', async(req, res)=> {
     }
 })
 
-router.post('/update-event', async(req, res)=> {
-    try{
-        console.log(req.body._id)
-        let event = await Evento.findByIdAndUpdate(req.body._id, req.body)
-        res.json(event)
-    }catch(error){
-        res.json({error: true, message: error.message})
-    }
-})
+
 module.exports = router

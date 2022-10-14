@@ -8,15 +8,13 @@ let port = process.env.PORT || 3003
 
 app.use(express.json());
 
-app.use(cors({
-    origin: '*',
-    methods: ['GET', 'POST', 'OPTIONS', 'PUT', 'PATCH', 'DELETE']
-}))
+
 
 app.use('/add', require('./src/routes/event.routes'));
 app.use('/clientes', require('./src/routes/getClientes.routes'));
 app.use('/add-cliente', require('./src/routes/cliente.routes'));
 app.use('/events', require('./src/routes/event.routes'));
+app.use('/update', require('./src/routes/updateEvent.routes'))
 app.use('/login', require('./src/routes/login.routes'));
 app.use('/user', require('./src/routes/usuario.routes'));
 app.use('/', require('./src/routes/getUserData.routes'));

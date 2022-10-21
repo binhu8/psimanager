@@ -16,7 +16,8 @@ const evento = new Schema({
     pago: Boolean,
     observacao: String,
     valorConsulta: String,
-    data: String
+    data: String,
+    meet: String
 });
 
 module.exports = mongoose.model('Evento', evento)

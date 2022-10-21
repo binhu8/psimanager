@@ -14,11 +14,11 @@ router.post('/', async(req, res)=>{
 });
 
 router.delete('/cliente', async(req, res)=> {
-    console.log('asdfasdfs')
     try{
-        console.log(req.body._id)
-        let event = await Cliente.findByIdAndDelete(req.body._id)
-        res.json({error: false, message: 'cliente deletado'})
+        console.log(req)
+        let event = await Cliente.findByIdAndDelete(req.query._id)
+        let clientes = await  Cliente.find({crpResponsavel: req.query.crpResponsavel});
+        res.json(clientes)
     }catch(error){
         res.json({error: true, message: error.message})
     }

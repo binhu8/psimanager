@@ -18,6 +18,7 @@ const evento = new Schema({
     valorConsulta: String,
     data: String,
     meet: String,
+    color: String
 });
 
 module.exports = mongoose.model('Evento', evento)

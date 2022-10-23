@@ -4,6 +4,7 @@ const database = require('./src/database/database');
 const cors = require('cors');
 const googleApiFolder = "1ekp2Z9AP8jnslJGF8g7o4pUc99xxze04";
 const {google} = require('googleapis');
+require('dotenv').config()
 let port = process.env.PORT || 3003
 
 app.use(express.json());

@@ -9,6 +9,7 @@ const usuario = new Schema({
     dataNascimento: String,
     email: String,
     senha: String,
+    valorConsultaPadrao: String,
     endereco: {
       numero: String,
       cep:  String,

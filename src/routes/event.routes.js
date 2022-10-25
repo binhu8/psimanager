@@ -18,7 +18,6 @@ function sendEmail(res, cliente){
     <h3>A reunião acontecerá na nossa palataforma.</h3>
     <h3>Link:</h3><span>${res.meet}</span>
     <h3>É importante estar em um local agrádavel e silêncioso para ter uma melhor experiência,</h3>
-    <h3>lembre-se de estar com bateria caso opite por fazer a chamada de um celular.</h3>
     `
 
     const transporter = nodemailer.createTransport({

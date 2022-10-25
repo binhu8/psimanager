@@ -7,6 +7,7 @@ const nodemailer = require('nodemailer');
 function sendEmail(res, cliente){
 
     let pass = process.env.PASS_EMAIL
+    console.log(passs )
     let email = 'no-replypsi@outlook.com'
 
     const bodyEmail = `

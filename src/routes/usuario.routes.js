@@ -3,9 +3,17 @@ const User = require('../models/usuario');
 
 router.post('/', async(req, res)=> {
     try{
-        const user = await new User(req.body).save()
-        console.log(req.body)
-        res.json(user)
+        const body = req.body
+        const usuarioDuplicado = await User.find({email: body.email}) 
+        console.log(usuarioDuplicado.length > 0)
+        if(usuarioDuplicado.length > 0){
+            res.json({error: true, message: 'E-mail já cadastrado'})
+        }else{
+            const user = await new User(body).save()
+            console.log(req.body)
+            res.json(user)
+        }
+        
     }catch(err){
         console.log(err )
     }

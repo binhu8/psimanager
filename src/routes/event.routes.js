@@ -79,7 +79,7 @@ router.get('/get', async(req, res)=> {
 
 router.get('/get-evento-cliente', async(req, res)=> {
     try{
-        let events = await Evento.find({cpfCliente: req.query.cpf, crp: req.query.crp})
+        let events = await Evento.find({cpfCliente: req.query.cpf, crp: req.query.crp}).sort({data: - 1})
         console.log(events)
         res.json(events)
     }catch(error){

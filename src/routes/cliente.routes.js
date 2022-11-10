@@ -25,7 +25,7 @@ router.put('/update', async(req, res)=> {
 
 router.delete('/cliente', async(req, res)=> {
     try{
-        console.log(req)
+       
         let event = await Cliente.findByIdAndDelete(req.query._id)
         let clientes = await  Cliente.find({crpResponsavel: req.query.crpResponsavel});
         res.json(clientes)

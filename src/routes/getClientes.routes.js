@@ -11,6 +11,17 @@ router.get('/', async(req, res)=>{
         res.json({error: true, message: error.message})
     }
 });
+router.get('/:id', async(req, res)=>{
+    try{
+        const id = req.params.id
+
+        const cliente = await  Cliente.findById(id);
+        res.json(cliente)
+
+    }catch(error){
+        res.json({error: true, message: error.message})
+    }
+});
 
 
 

@@ -51,14 +51,13 @@ router.post('/', async(req, res)=> {
     try{
         const body = req.body
         let event 
-        console.log('passei aqui agora')
         body.forEach(async evento => {
 
              event = await new Evento(evento).save()
             //  let [cliente] = await Cliente.find({cpf: evento.cpfCliente })
             //  sendEmail(evento, cliente)
             //  console.log('toma -> ', cliente)
-            console.log(event)
+            
         })
         
 
@@ -71,7 +70,7 @@ router.post('/', async(req, res)=> {
 router.get('/get', async(req, res)=> {
     try{
         let event = await Evento.find({crp: req.query.crp})
-        console.log( event)
+        
         res.json(event)
     }catch(err){
         console.log(err)
@@ -80,8 +79,8 @@ router.get('/get', async(req, res)=> {
 
 router.get('/get-evento-cliente', async(req, res)=> {
     try{
-        console.log(req.query)
         let events = await Evento.find({cpfCliente: req.query.cpf, crp: req.query.crp})
+        console.log(events)
         res.json(events)
     }catch(error){
         res.json({error: true, message: error.message})

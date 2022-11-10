@@ -4,7 +4,7 @@ const Cliente = require('../models/cliente')
 router.get('/', async(req, res)=>{
     try{
 
-        const cliente = await  Cliente.find({crpResponsavel: req.query.crp});
+        const cliente = await  Cliente.find({crpResponsavel: req.query.crp}).sort({nome: 1});
         res.json(cliente)
 
     }catch(error){

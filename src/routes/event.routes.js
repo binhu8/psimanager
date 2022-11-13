@@ -69,7 +69,7 @@ router.post('/', async(req, res)=> {
 
 router.get('/get', async(req, res)=> {
     try{
-        let event = await Evento.find({crp: req.query.crp})
+        let event = await Evento.find({crp: req.query.crp}).sort({start: +1})
         
         res.json(event)
     }catch(err){

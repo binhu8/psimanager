@@ -14,7 +14,7 @@ router.post('/', async(req, res)=> {
                     .setReceiverZipCode(user.endereco.cep)
                     .setKey(user.chavePix)
                     .setIdentificator('0000990909099o')
-                    .setDescription(`Consultas realizadas com ${user.nome} ${user.sobrenome}`)
+                    .setDescription(``)
                     .isUniqueTransaction(true)
                     .setAmount(valor)
         let brCode = await pix.getBRCode()

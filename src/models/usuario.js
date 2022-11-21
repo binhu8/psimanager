@@ -10,6 +10,7 @@ const usuario = new Schema({
     email: String,
     senha: String,
     valorConsultaPadrao: String,
+    chavePix: String,
     endereco: {
       numero: String,
       cep:  String,

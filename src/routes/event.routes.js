@@ -80,7 +80,7 @@ router.get('/get', async(req, res)=> {
 router.get('/get-evento-cliente', async(req, res)=> {
     try{
         let events = await Evento.find({cpfCliente: req.query.cpf, crp: req.query.crp}).sort({start: +1})
-        console.log(events)
+        
         res.json(events)
     }catch(error){
         res.json({error: true, message: error.message})

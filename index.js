@@ -21,6 +21,7 @@ app.use('/update', require('./src/routes/updateEvent.routes'))
 app.use('/login', require('./src/routes/login.routes'));
 app.use('/user', require('./src/routes/usuario.routes'));
 app.use('/', require('./src/routes/getUserData.routes'));
+app.use('/pix', require('./src/routes/getPix.routes'));
 
 app.listen(port, ()=>{
     console.log('servidor online')

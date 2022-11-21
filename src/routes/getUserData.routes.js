@@ -9,5 +9,15 @@ router.post('/', async(req, res)=> {
         console.log(err )
     }
 })
+router.get
+('/getUser/:crp', async(req, res)=> {
+    try{
+        const crp = req.params.crp
+       const [user] = await User.find({crp: crp})
+       res.json(user)
+    }catch(err){
+        console.log(err )
+    }
+})
 
 module.exports= router

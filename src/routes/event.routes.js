@@ -53,10 +53,8 @@ router.post('/', async(req, res)=> {
         let event 
         body.forEach(async evento => {
 
-             event = await new Evento(evento).save()
-            //  let [cliente] = await Cliente.find({cpf: evento.cpfCliente })
-            //  sendEmail(evento, cliente)
-            //  console.log('toma -> ', cliente)
+            event = await new Evento(evento).save()
+            console.log(evento, 'this event')
             
         })
         

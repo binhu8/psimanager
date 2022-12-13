@@ -5,8 +5,11 @@ router.post('/', async(req, res)=> {
     try{
         const body = req.body
         const usuarioDuplicado = await User.find({email: body.email}) 
+        const crpDuplicado = await User.find({crp: body.crp})
         if(usuarioDuplicado.length > 0){
             res.json({error: true, message: 'E-mail já cadastrado'})
+        }else if(crpDuplicado.length > 0){
+            console.log('usuario duplicado')
         }else{
             const user = await new User(body).save()
             res.json(user)
